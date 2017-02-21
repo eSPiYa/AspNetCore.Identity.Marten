@@ -1,0 +1,35 @@
+﻿{
+  "title": "AspNetCore.Identity.Marten",
+  "version": "1.0.0-alpha-*",
+  "authors": [
+    "Kedar Vaidya"
+  ],
+  "description": "Marten data store adaptor for ASP.NET Core Identity",
+  "copyright": "Copyright (c) 2016 Kedar Vaidya",
+  "packOptions": {
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/kedarvaidya/AspNetCore.Identity.Marten"
+    },
+    "licenseUrl": "https://github.com/kedarvaidya/AspNetCore.Identity.Marten/blob/master/LICENSE",
+    "tags": [
+      "aspnetcore",
+      "identity",
+      "marten",
+      "membership",
+      "auth"
+    ]
+  },
+
+  "dependencies": {
+    "Marten": "1.4.0",
+    "NETStandard.Library": "1.6.1",
+    "Microsoft.AspNetCore.Identity": "1.1.0"
+  },
+
+  "frameworks": {
+    "netstandard1.6": {
+      "imports": "dnxcore50"
+    }
+  }
+}
