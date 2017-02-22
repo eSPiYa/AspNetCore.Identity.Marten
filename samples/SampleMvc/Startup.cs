@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using SampleMvc.Models;
 using AspNetCore.Identity.Marten;
 using SampleMvc.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SampleMvc
 {
@@ -35,7 +36,10 @@ namespace SampleMvc
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddMvc();
+            services.AddMvc(options => {
+                options.SslPort = 44317;
+                options.Filters.Add(new RequireHttpsAttribute());
+            });
 
             services.AddApplicationDocumentStore(Configuration);
             services.AddApplicationDocumentSession();
