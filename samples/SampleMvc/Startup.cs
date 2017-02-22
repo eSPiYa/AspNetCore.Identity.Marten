@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using SampleMvc.Models;
+using AspNetCore.Identity.Marten;
 
 namespace SampleMvc
 {
@@ -29,6 +31,14 @@ namespace SampleMvc
         {
             // Add framework services.
             services.AddMvc();
+
+            services.AddApplicationDocumentStore(Configuration);
+            services.AddApplicationDocumentSession();
+            services.AddApplicationSystemClock();
+
+            services.AddApplicationIdentity()
+                .AddMartenStores<ApplicationUser, Guid>()
+                .AddDefaultTokenProviders();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +58,8 @@ namespace SampleMvc
             }
 
             app.UseStaticFiles();
+
+            app.UseIdentity();
 
             app.UseMvc(routes =>
             {
