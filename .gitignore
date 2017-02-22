@@ -241,4 +241,4 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
-appsettings.development.json
+**/appsettings.development.json
