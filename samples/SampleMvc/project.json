@@ -2,6 +2,7 @@
   "dependencies": {
     "AspNetCore.Identity.Marten": "1.0.0-alpha",
     "BundlerMinifier.Core": "2.3.327",
+    "Microsoft.AspNetCore.Authentication.Facebook": "1.1.0",
     "Microsoft.AspNetCore.Diagnostics": "1.1.0",
     "Microsoft.AspNetCore.Mvc": "1.1.1",
     "Microsoft.AspNetCore.Razor.Tools": {

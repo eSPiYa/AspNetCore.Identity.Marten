@@ -73,6 +73,15 @@ namespace SampleMvc
 
             app.UseIdentity();
 
+            bool fbEnabled = bool.TryParse(Configuration["Authentication:Facebook:Enabled"], out fbEnabled)? fbEnabled : false;
+
+            if (fbEnabled)
+                app.UseFacebookAuthentication(new FacebookOptions()
+                {
+                    AppId = Configuration["Authentication:Facebook:AppId"],
+                    AppSecret = Configuration["Authentication:Facebook:AppSecret"]
+                });
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
