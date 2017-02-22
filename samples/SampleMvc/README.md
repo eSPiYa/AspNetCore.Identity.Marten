@@ -19,8 +19,8 @@ Add this with proper values in your 'appsettings.{env.EnvironmentName}.json' or 
   "Authentication": {
     "Facebook": {
       "Enabled" : true,
-      "AppId": "1354410337939024",
-      "AppSecret": "72006c8e0e6d34a3d69c7d3b4d811d4c"
+      "AppId": "your-fb-appid",
+      "AppSecret": "your-fb-appsecret"
     }
   }
 ```
