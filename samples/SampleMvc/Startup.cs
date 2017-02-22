@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using SampleMvc.Models;
 using AspNetCore.Identity.Marten;
+using SampleMvc.Services;
 
 namespace SampleMvc
 {
@@ -39,6 +40,9 @@ namespace SampleMvc
             services.AddApplicationIdentity()
                 .AddMartenStores<ApplicationUser, Guid>()
                 .AddDefaultTokenProviders();
+
+            services.AddSingleton<IEmailSender, LoggingAuthMessageSender>();
+            services.AddSingleton<ISmsSender, LoggingAuthMessageSender>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
